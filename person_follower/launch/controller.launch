@@ -1,0 +1,24 @@
+<launch>
+    <node name="controller" pkg="pid" type="controller" ns="distance" output="screen" >
+      <param name="Kp" value="-4" />
+      <param name="Ki" value="-0.1" />
+      <param name="Kd" value="0" />
+      <param name="upper_limit" value="10" />
+      <param name="lower_limit" value="-10" />
+      <param name="windup_limit" value="10" />
+      <param name="max_loop_frequency" value="10" />
+      <param name="min_loop_frequency" value="5" />
+      <remap from="pid_enable" to="/pid_enable" />
+     </node>
+    <node name="controller" pkg="pid" type="controller" ns="angle" output="screen" >
+      <param name="Kp" value="-4" />
+      <param name="Ki" value="-0.1" />
+      <param name="Kd" value="-0" />
+      <param name="upper_limit" value="10" />
+      <param name="lower_limit" value="-10" />
+      <param name="windup_limit" value="10" />
+      <param name="max_loop_frequency" value="10" />
+      <param name="min_loop_frequency" value="5" />
+      <remap from="pid_enable" to="/pid_enable" />
+     </node>
+</launch>
